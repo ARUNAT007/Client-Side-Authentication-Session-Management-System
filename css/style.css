@@ -1,0 +1,634 @@
+/* Import Premium Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;   /* IMPORTANT */
+  height: 100vh;
+}
+
+
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #8cdafb, #dee0f9, #06a6ea, #1c92d2);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Premium Glass Card */
+.login-container {
+  width: 400px;
+  padding: 45px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(255,255,255,0.1);
+  transition: 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+/* Floating Hover Effect */
+.login-container:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 35px 60px rgba(0,0,0,0.8),
+    inset 0 0 25px rgba(255,255,255,0.2);
+}
+
+/* Title */
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* Input Fields */
+.login-container input {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 22px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  box-shadow: inset 0 4px 12px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+/* Placeholder */
+.login-container input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Input Focus Glow */
+.login-container input:focus {
+  background: rgba(255,255,255,0.25);
+  box-shadow:
+    0 0 15px #00eaff,
+    inset 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Premium Gradient Button */
+.login-container button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 15px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine Effect */
+.login-container button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+/* Animate Shine */
+.login-container button:hover::before {
+  animation: shine 1s forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+/* Button Hover */
+.login-container button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.7);
+}
+
+/* Button Press */
+.login-container button:active {
+  transform: translateY(2px);
+}
+
+
+/* =========================================
+   SIDEBAR (FOR UL + LI STRUCTURE)
+========================================= */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #141e30, #243b55);
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 20px rgba(0,0,0,0.3);
+}
+
+.sidebar h2 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #ddd;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effect */
+.sidebar ul li:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transform: translateX(6px);
+}
+
+/* Left Accent Bar */
+.sidebar ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: transparent;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.sidebar ul li:hover::before {
+  background: linear-gradient(to bottom, #00c6ff, #007bff);
+}
+
+/* Logout Styling */
+#logoutBtn {
+  margin-top: 20px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  text-align: center;
+}
+
+#logoutBtn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   SIDEBAR (FOR UL + LI STRUCTURE)
+========================================= */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(180deg, #141e30, #243b55);
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 20px rgba(0,0,0,0.3);
+}
+
+.sidebar h2 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #ddd;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effect */
+.sidebar ul li:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transform: translateX(6px);
+}
+
+/* Left Accent Bar */
+.sidebar ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: transparent;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.sidebar ul li:hover::before {
+  background: linear-gradient(to bottom, #00c6ff, #007bff);
+}
+
+/* Logout Styling */
+#logoutBtn {
+  margin-top: 20px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  text-align: center;
+}
+
+#logoutBtn:hover {
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   DARK MODE SUPPORT
+========================================= */
+
+body.dark .sidebar {
+  background: linear-gradient(180deg, #1e1e2f, #2b2b3d);
+}
+
+body.dark .sidebar button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+.main {
+  margin-left: 260px;
+  padding: 40px;
+  transition: 0.3s ease;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* =========================================
+   GLASS CARD
+========================================= */
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+/* =========================================
+   INPUTS & BUTTONS
+========================================= */
+input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 8px 5px 15px 0;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,0.4);
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+}
+
+/* =========================================
+   TABLE STYLING
+========================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+thead {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+tbody tr {
+  transition: 0.3s;
+}
+
+tbody tr:hover {
+  background: #f0f8ff;
+  transform: scale(1.01);
+}
+
+/* =========================================
+   TASK MANAGER
+========================================= */
+#taskList li {
+  list-style: none;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background: rgb(226, 224, 236);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#taskList li:hover {
+  transform: translateX(5px);
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* =========================================
+   PRODUCT GRID LAYOUT
+========================================= */
+
+#plist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 4 columns */
+  gap: 20px;
+  margin-top: 20px;
+  
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  #plist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  #plist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #plist {
+    grid-template-columns: 2fr;
+  }
+}
+
+#plist .card {
+  padding: 20px;
+  margin-right:20px;
+  border-radius: 16px;
+  width: 270px;
+  background: white;
+  box-shadow: 1 8px 20px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+#plist .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+};
+/* =========================================
+   CLOCK
+========================================= */
+#clock {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 10px;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+body.dark {
+  background: linear-gradient(135deg, #1e1e2f, #2b2b3d);
+  color: white;
+}
+
+body.dark .card {
+  background: rgba(30, 30, 47, 0.8);
+  color: white;
+}
+
+body.dark table {
+  background: #2b2b3d;
+  color: white;
+}
+
+body.dark input {
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+body.dark #taskList li {
+  background: #333;
+}
+body.dark #search {
+  background: #3a3a50;
+  color: white;
+  border: 1px solid #666;
+}
+
+
+/* =========================================
+   ROLE SYSTEM CARDS
+========================================= */
+
+.role-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.role-card {
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.role-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Student Style */
+.role-card.student {
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+}
+
+.role-card.student:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Admin Style */
+.role-card.admin {
+  background: linear-gradient(135deg, #057a10, #03eb4c);
+}
+
+.role-card.admin:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+/* =========================================
+   DARK MODE - PRODUCT LIST FIX
+========================================= */
+
+body.dark #plist .card {
+  background: #2b2b3d !important;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+body.dark #plist .card p,
+body.dark #plist .card h4 {
+  color: #ffffff;
+}
+.sidebar ul li.active {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+/* Make dropdown same as input fields */
+.input-box {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 22px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  box-shadow: inset 0 4px 12px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+  appearance: none; /* remove default style */
+}
+
+/* Focus glow */
+.input-box:focus {
+  background: rgba(255,255,255,0.25);
+  box-shadow:
+    0 0 15px #00eaff,
+    inset 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Dropdown arrow custom */
+select.input-box {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+  cursor: pointer;
+}

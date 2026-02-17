@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>University Admin Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- ================= LOGIN PAGE ================= -->
+<div id="loginPage" class="login-container">
+  <div class="login-box"><center>
+    <h2>🎓 University Portal</h2>
+    <form id="loginForm">
+      <input type="number" id="userId" class="input-box" placeholder="UserID">
+      
+      <select id="role" class="input-box">
+        <option value="" style="color: black;">Select Role</option>
+        <option value="student" style="color: black;">Student</option>
+        <option value="admin" style="color: black;">Admin</option>
+      </select>
+
+      <input type="text" id="username" class="input-box" placeholder="Username" required><br>
+      <input type="password" id="password" class="input-box" placeholder="Password" required><br>
+      <button type="submit" onclick="login()">Login</button>
+    </form></center>
+  </div>
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+<div id="dashboardPage" class="layout" style="display:none;">
+
+  <aside class="sidebar">
+    <h2>🎓 UniPortal</h2>
+    <ul>
+      <li data-section="dashboard">Dashboard</li>
+      <li data-section="student">Student Analyzer</li>
+      <li data-section="todo">Task Manager</li>
+      <li data-section="products">Products</li>
+      <li data-section="timer">Timer</li>
+      <li data-section="oop">Role System</li>
+      <li id="logoutBtn">Logout</li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <header>
+      <h1 id="welcome"></h1>
+      <button id="themeToggle">🌙</button>
+    </header>
+    <section id="content"></section>
+  </main>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
